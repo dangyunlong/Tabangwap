@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>她帮官网</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="body">
+			<div class="banner">
+				<div class="bannerbox">
+					<img src="img/logo.png"/>
+					<ul class="bannernav">
+						<li><a href="#" class="sel">首页</a></li>
+						<li><a href="javascript:void(0)" onclick="goto(550)">产品介绍</a></li>
+						<li><a href="javascript:void(0)" onclick="goto(1085)">产品优势</a></li>
+						<li><a href="javascript:void(0)" onclick="goto(1605)">合作优势</a></li>
+						<li><a href="javascript:void(0)" onclick="goto(2185)">加入我们</a></li>
+					</ul>
+					<div class="box"><img src="img/jt.png"/></div>
+				</div>
+			</div>
+			<div class="map">
+				<img src="img/neirong1.png"/>
+			</div>
+			<div class="adv">
+				<div class="advbox">
+					<img src="img/neirong2.png"/>
+				</div>
+			</div>
+			<div class="map">
+				<img src="img/neirong3.png"/>
+			</div>
+			<div class="mode">
+				<img src="img/neirong4.png"/>
+			</div>
+			<div class="bottom">
+				<div class="bottombox">
+					<div class="floatleft">
+						<p class="title">关于我们</p>
+						<p class="txt">
+							玖壹网络科技有限公司是中国知名的消费分期服务平台，通过互联网、移动互联网和 大数据技术创新为都市白领人群提供快速、便捷、安全的个人消费分期服务。<br />
+她帮隶属于玖壹网路科技有限公司，创建于2016年10月，总部位于北京。公司自成立以来坚持模式创新、技术创新和理念创新，积极布局消费金融，创造性的构建了消费金融与医疗健康相融合的医疗健康消费分期服务平台。以"0首付、0压力"的理念服务于社会大众。
+						</p>
+						<p class="copyright">
+							COPYRIGHTS 2017@ 玖壹网络科技有限公司  冀ICP备16026586号-4
+						</p>
+					</div>
+					<div class="floatright">
+						<img src="img/erweima.png"/>
+						<p>400-882-9991</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="nav" id="nav">
+			<div class="navbox">
+				<ul class="zindex" id="zindex">
+					<li><a href="#" data-num="0">首页</a><span class="line"></span></li>
+					<li><a href="javascript:void(0)" data-num="140" onclick="goto(550)">产品介绍</a><span class="line"></span></li>
+					<li><a href="javascript:void(0)" data-num="280" onclick="goto(1085)">产品优势</a><span class="line"></span></li>
+					<li><a href="javascript:void(0)" data-num="420" onclick="goto(1605)">合作优势</a><span class="line"></span></li>
+					<li><a href="javascript:void(0)" data-num="560" onclick="goto(2185)">加入我们</a></li>
+				</ul>
+				<div class="bg" style="left:0;" id="bg"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//页面滚动条
+			$(window).on("scroll",function(){
+			 	var sTop = $(window).scrollTop();  
+			 	if (sTop >= 450 && sTop <= 1080) {  
+                    $("#nav").fadeIn();
+                    $("#bg").stop(true,true).animate({"left":140},100);
+                } 
+                if (sTop >= 1080 && sTop <= 1600) {  
+                	 $("#nav").fadeIn();
+                    $("#bg").stop(true,true).animate({"left":280},100);
+                } 
+                if (sTop >= 1600 && sTop <= 2180) {  
+                	 $("#nav").fadeIn();
+                    $("#bg").stop(true,true).animate({"left":420},100);
+                } 
+                if (sTop >= 2180) {  
+                	 $("#nav").fadeIn();
+                    $("#bg").stop(true,true).animate({"left":560},100);
+                } 
+                if (sTop <= 450){
+                	$("#bg").stop(true,true).animate({"left":0},100);
+                	$("#nav").fadeOut();
+                }
+			})
+			//导航追踪
+			$("#zindex a").on("mouseover",function(){
+				var num=$(this).attr("data-num");
+				$("#bg").stop(true,true).animate({"left":num},100);
+			})
+			//导航跳转
+			function goto(num){
+				$(window).scrollTop(num)
+			}
+		</script>
+	</body>
+</html>
